@@ -30,11 +30,11 @@ main PROC
 		call WriteString
 	loop topofboardLoop
 
-	mov ECX, column                                   ; Construct the middle parts of the board. Includes a row of | and a row of --
+	mov ECX, column                                   ; Construct the middle parts of the board. 
     mov EBX, row
 
 	sideofboardLoop:                                   
-		call Crlf
+		call Crlf                                     ; loop for each line of vertical bars
 		mov EDX, OFFSET board2
 		insideofboardLoop:
 			call WriteString
@@ -44,7 +44,7 @@ main PROC
 
 		call Crlf
 
-		mov ECX, column
+		mov ECX, column								  ; loop for each line of horizontal bars
 		mov EDX, OFFSET spacing
 	    call WriteString
 		mov EDX, OFFSET board1
