@@ -1,1 +1,1 @@
-# FinalProject60
+# CS 271 - Final Project - Group 60
