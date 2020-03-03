@@ -5,8 +5,8 @@ TITLE: Minesweeper       (minesweeper.asm)
 INCLUDE Irvine32.inc
 
 .data
-	row dword ?
-	column dword ?
+	row dword 10
+	column dword 10
 
 	board1 byte "- ",0
 	board2 byte "| ",0
@@ -14,13 +14,16 @@ INCLUDE Irvine32.inc
 
 	spacing byte " ",0
 
+	board byte row DUP( column DUP(0) )
+	visable dword row DUP( column DUP(0) )
+
 .code
 main PROC
 	
 	; Creates the Board
 
-	mov row, 5                                        ; Initialize the board.
-	mov column, 10
+				                                      ; Initialize the board.
+	
 
 	mov ECX, column                                   ; Construct the top of the board
 	mov EDX, OFFSET spacing
